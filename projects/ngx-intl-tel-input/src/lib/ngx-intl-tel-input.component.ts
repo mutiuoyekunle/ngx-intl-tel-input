@@ -48,7 +48,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
   @Input() value: string | undefined = '';
   @Input() preferredCountries: Array<string> = [];
   @Input() enablePlaceholder = true;
-  @Input() customPlaceholder: string;
+  @Input() customPlaceholder!: string;
   @Input() numberFormat: PhoneNumberFormat = PhoneNumberFormat.International;
   @Input() cssClass = 'form-control';
   @Input() onlyCountries: Array<string> = [];
@@ -56,13 +56,13 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
   @Input() searchCountryFlag = false;
   @Input() searchCountryField: SearchCountryField[] = [SearchCountryField.All];
   @Input() searchCountryPlaceholder = 'Search Country';
-  @Input() maxLength: number;
+  @Input() maxLength!: number;
   @Input() selectFirstCountry = true;
-  @Input() selectedCountryISO: CountryISO;
+  @Input() selectedCountryISO!: CountryISO;
   @Input() phoneValidation = true;
   @Input() inputId = 'phone';
   @Input() separateDialCode = false;
-  separateDialCodeClass: string;
+  separateDialCodeClass!: string;
 
   @Output() readonly countryChange = new EventEmitter<Country>();
 
@@ -86,7 +86,7 @@ export class NgxIntlTelInputComponent implements OnInit, OnChanges {
   errors: Array<any> = ['Phone number is required.'];
   countrySearchText = '';
 
-  @ViewChild('countryList') countryList: ElementRef;
+  @ViewChild('countryList') countryList!: ElementRef;
 
   onTouched = () => {};
   propagateChange = (_: ChangeData) => {};
